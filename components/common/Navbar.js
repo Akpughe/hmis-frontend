@@ -14,7 +14,7 @@ const Searchbar = () => {
           />
 
           <div class="">
-            <button class="bg-blue-500 text-white hover:bg-blue-400 focus:outline-none w-auto px-2 h-12 flex items-center justify-center">
+            <button class="bg-purple-500 text-white hover:bg-purple-400 focus:outline-none w-auto px-2 h-12 flex items-center justify-center">
               Search
             </button>
           </div>
