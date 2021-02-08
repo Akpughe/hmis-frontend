@@ -4,18 +4,23 @@ import Navbrand from './Navbrand';
 const Searchbar = () => {
   return (
     <>
-      <div class="p-8 ">
-        <div class="bg-white flex items-center shadow-xl w-96">
+      <div className="p-8 ">
+        <div className="bg-white flex items-center shadow-xl w-96 rounded-l-full rounded-r-full">
           <input
-            class="rounded-l-full w-full px-6 text-gray-700 leading-tight focus:outline-none"
+            className="rounded-l-full w-full px-6 text-gray-700 leading-tight focus:outline-none"
             id="search"
             type="text"
             placeholder="Search..."
           />
 
-          <div class="">
-            <button class="bg-purple-500 text-white hover:bg-purple-400 focus:outline-none w-auto px-2 h-12 flex items-center justify-center">
-              Search
+          <div className="rounded-r-full">
+            <button className="text-gray-500 rounded-r-full focus:outline-none w-auto px-2 h-12 flex items-center justify-center">
+              <svg className="svg-icon" viewBox="0 0 20 20">
+                <path
+                  fill="none"
+                  d="M18.109,17.776l-3.082-3.081c-0.059-0.059-0.135-0.077-0.211-0.087c1.373-1.38,2.221-3.28,2.221-5.379c0-4.212-3.414-7.626-7.625-7.626c-4.212,0-7.626,3.414-7.626,7.626s3.414,7.627,7.626,7.627c1.918,0,3.665-0.713,5.004-1.882c0.006,0.085,0.033,0.17,0.098,0.234l3.082,3.081c0.143,0.142,0.371,0.142,0.514,0C18.25,18.148,18.25,17.918,18.109,17.776zM9.412,16.13c-3.811,0-6.9-3.089-6.9-6.9c0-3.81,3.089-6.899,6.9-6.899c3.811,0,6.901,3.09,6.901,6.899C16.312,13.041,13.223,16.13,9.412,16.13z"
+                ></path>
+              </svg>
             </button>
           </div>
         </div>
@@ -26,8 +31,8 @@ const Searchbar = () => {
 
 const Navbar = () => {
   return (
-    <nav class="bg-gray-800 h-auto w-full">
-      <div class=" mx-auto px-2 sm:px-6 lg:px-8" style={{ maxWidth: '75rem' }}>
+    <nav class="bg-white fixed border-b  h-auto w-full">
+      <div class=" mx-auto px-2 sm:px-6 lg:px-8" style={{ maxWidth: '100rem' }}>
         <div class="relative flex items-center justify-between h-16">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* <!-- Mobile menu button--> */}
@@ -36,12 +41,6 @@ const Navbar = () => {
               aria-expanded="false"
             >
               <span class="sr-only">Open main menu</span>
-              {/* <!-- Icon when menu is closed. -->
-          <!--
-            Heroicon name: menu
-
-            Menu open: "hidden", Menu closed: "block"
-          --> */}
               <svg
                 class="block h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,12 +56,6 @@ const Navbar = () => {
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-              {/* <!-- Icon when menu is open. -->
-          <!--
-            Heroicon name: x
-
-            Menu open: "block", Menu closed: "hidden"
-          --> */}
               <svg
                 class="hidden h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -81,40 +74,13 @@ const Navbar = () => {
             </button>
           </div>
           <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            {/* <Navbrand /> */}
-            <div class="hidden sm:block sm:ml-6">
+            <Navbrand />
+            <div class="hidden sm:block sm:ml-20">
               <Searchbar />
-              {/* <div class="flex space-x-4">
-                <a
-                  href="#"
-                  class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Dashboard
-                </a>
-                <a
-                  href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Team
-                </a>
-                <a
-                  href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Calendar
-                </a>
-                
-              </div>  */}
             </div>
           </div>
           <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <button class="p-1 rounded-full text-gray-400  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white">
               <span class="sr-only">View notifications</span>
               {/* <!-- Heroicon name: bell --> */}
               <svg
@@ -138,7 +104,7 @@ const Navbar = () => {
             <div class="ml-3 relative">
               <div>
                 <button
-                  class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  class="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                   id="user-menu"
                   aria-haspopup="true"
                 >
@@ -151,16 +117,6 @@ const Navbar = () => {
                 </button>
               </div>
 
-              {/* <!--
-            Profile dropdown panel, show/hide based on dropdown state.
-
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          --> */}
               {/* <div
                 class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"
                 role="menu"
@@ -190,7 +146,7 @@ const Navbar = () => {
                 </a>
               </div> */}
             </div>
-            <span className="font-semibold text-base text-white ml-2">
+            <span className="font-semibold text-base text-gray-500 ml-2">
               Admin
             </span>
           </div>

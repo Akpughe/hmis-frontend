@@ -1,39 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbrand from './Navbrand';
 
 const Sidebar = () => {
+  const [selected, setSelected] = useState(false);
+
+  
   return (
-    <nav className="bg-gray-800 h-screen w-72">
+    <nav className="bg-white h-screen shadow-xl w-72 fixed mt-16 ">
       <div className="p-7">
-        {/* logo */}
-        <div className="mb-8">
-          <Navbrand />
-        </div>
         <div class="flex flex-col space-y-4">
           {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
           <a
             href="#"
-            class="bg-gray-900 text-white px-5 py-4 rounded-md text-sm font-medium"
+            class="text-gray-500 border-l-4 border-blue-600 px-5 py-4 text-sm font-medium"
           >
             Dashboard
           </a>
           <a
             href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-5 py-4 rounded-md text-sm font-medium"
+            // class="text-gray-500 hover:border-blue-600 border-l-4 px-5 py-4 text-sm font-medium "
+            className={
+              selected === true
+                ? `text-gray-500 border-l-4 hover:border-blue-600 border-l-4 px-5 py-4 text-sm font-medium`
+                : `text-gray-500 hover:border-blue-600 border-l-4 px-5 py-4 text-sm font-medium`
+            }
+            onClick={setSelected}
           >
-            Team
+            Appointment
           </a>
           <a
             href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-5 py-4 rounded-md text-sm font-medium"
+            class="text-gray-500 hover:border-blue-600 border-l-4 px-5 py-4 text-sm font-medium"
           >
-            Projects
+            Doctors
           </a>
           <a
             href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-5 py-4 rounded-md text-sm font-medium"
+            class="text-gray-500 hover:border-blue-600 border-l-4 px-5 py-4 text-sm font-medium"
           >
-            Calendar
+            Nurses
+          </a>
+          <a
+            href="#"
+            class="text-gray-500 hover:border-blue-600 border-l-4 px-5 py-4 text-sm font-medium"
+          >
+            Patients
+          </a>
+          <a
+            href="#"
+            class="text-gray-500 hover:border-blue-600 border-l-4 px-5 py-4 text-sm font-medium"
+          >
+            Settings
           </a>
         </div>
       </div>
